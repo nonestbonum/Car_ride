@@ -1,0 +1,253 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  input[type="text"] {
+    font-family: inherit; /* 1 */
+    font-size: inherit; /* 1 */
+    line-height: inherit; /* 1 */
+    margin-top: 0.5rem; /* 2 */
+    margin-bottom: 0.5rem;
+  }
+body {
+    background-color: rgb(255, 255, 255);
+}
+p{
+    word-spacing: 20px;
+    letter-spacing: 1px;
+    
+}
+.anna_prihodiko{
+    letter-spacing: 1px;
+}
+    /* <p><span class="temp"></span></p>
+    <p><span class="humidity"></span></p>
+    <p><span class="wind">  */
+
+
+.weather{
+        color: rgb(255, 255, 255);
+        opacity: 0;
+        }
+/* .h5 {
+        color: rgb(0, 0, 0);
+        /* display: block; */
+        /* font-size: 0.83em;/
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 5px;
+        margin-inline-end: 0px;
+        font-weight: bold; */
+        /* top: 50px;
+        top: 20em; */
+        /* margin-left: 1%; */
+    /* } */ */
+   /* .rash{
+       color: #000000;
+   }
+    
+    /* .rash, .one, .choose .three{
+        margin-left: 50%;
+    } */
+    /* .one .rash{
+        float:left;
+        width:33%;
+        
+} */ */
+    
+    
+    /* .input_rashod, .input_city{
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 25px;
+        margin-left: 40%;
+        width: 35%;
+        height: 35px;
+        border: 2px solid #535658;
+        font-size:20px;
+       color:#000000;
+       text-align: center;
+       
+       } */
+       /* .input_city{
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 25px;
+        margin-left: 1%;
+        width: 35%;
+        height: 35px;
+        border: 2px solid #252627;
+        font-size:20px;
+       color:#000000;
+       text-align: center;
+       } */
+       /* .input_inA{
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 25px;
+        margin-left: 1%;
+        width: 35%;
+        height: 35px;
+        border: 2px solid #252627;
+        font-size:20px;
+       color:#000000;
+       text-align: center;
+       }
+       .input_inB{
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 25px;
+        margin-left: 1%;
+        width: 35%;
+        height: 35px;
+        border: 2px solid #252627;
+        font-size:20px;
+       color:#000000;
+       text-align: center;
+       } */
+       .text-field {
+        margin-bottom: 1rem;
+        font-stretch: ultra-expanded;
+        font-family: 'Myriad Pro'
+      }
+      /* стили для label */
+      .text-field__label, .text-field__label1, .text-field__label2, .text-field__label3, .cities  {
+        display: block;
+        margin-bottom: 0.25rem;
+        text-align: center;
+        font-family: inherit;
+        letter-spacing: 3px;
+        
+        
+        
+      }
+      /* стили для input */
+      .input_rashod, .input_city, .input_inA, .input_inB {
+        display: block;
+        width: 100%;
+        height: calc(2.25rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-family: inherit;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 2px solid #18240365;
+        border-radius: 0.5rem;
+        letter-spacing: 1px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        
+      }
+
+      select { 
+        font-size: 100%;
+        width: 100%;
+        height: calc(2.25rem + 2px);
+        padding: 0.375rem 0.75rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        border: 2px solid #bdbdbd96;
+        border-radius: 0.5rem;
+        letter-spacing: 1px;
+      }
+      button {
+          width: 100%;
+          height: calc(2.25rem + 2px);
+          color: #212529;
+          background-color: rgb(252, 250, 250);
+          border: 1px solid #747474;
+          border-radius: 0.5rem;
+          letter-spacing: 2px;
+
+
+    }
+    .text-field__input::placeholder {
+        color: #212529;
+        opacity: 0.4;
+        
+      }
+      /* .cities{
+        width: 100%;
+      } */
+    
+/* select {
+  appearance: none;
+  
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+   */
+
+      
+
+    /* #ymaps{
+   
+        width: 10000px;
+        height: 450px;
+        
+    } */
+/* 
+p {
+    color: rgb(43, 59, 47);
+}
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial;
+    font-size: 14px;
+}
+#list {
+    padding: 10px;
+}
+
+.input_inA{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.a1{
+    top: 10px;
+    top: 2em;
+    top: 50%;
+    top: auto;
+    top: inherit;
+    top: initial;
+}
+#button{
+    appearance: auto;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(255, 0, 0), rgb(235, 0, 0));
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(255, 255, 255), rgb(255, 255, 255));
+    border-image: initial;
+} */
