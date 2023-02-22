@@ -1,26 +1,5 @@
-
-// import axios from 'axios'
-
-
 ymaps.ready(init);
 
-// var json = JSON.parse(fs.readFileSync('/Users/imac/Desktop/mois/pointA.json'));
-
-// function getSelectedText(elementId) {
-//     var elt = document.getElementById(elementId);
-
-//     // if (elt.selectedIndex == -1)
-//     //     return null;
-
-//     return elt.options[elt.selectedIndex].text;
-// }
-
-
-//     var text = getSelectedText('cities');
-//     console.log(text)
-
-                
-            
     function init() {
         var days = [
             'sun',
@@ -35,13 +14,7 @@ ymaps.ready(init);
           var nn = d.getDay();
           let t = d.getHours();
 
-          
-          
-        //   console.log(t);
           var traffic=0;
-          
-
-          
 
         switch (days[nn]) {
             case 'sat':
@@ -56,7 +29,6 @@ ymaps.ready(init);
             case 'wen':
                 traffic +=3;
                 break;
-        
         }
         
         
@@ -145,41 +117,6 @@ ymaps.ready(init);
 
 
         }
-      
-    
-        
-        // console.log(traffic);
-        // API ключ
-
-  
-        // Отправляем запрос
-
-        
-
-    
-        
-
-        // let temperature = document.querySelector('.temp')
-
-       
-        // tempp = document.querySelector('.temp_min')
-
-        
-
-        
-
-       
-
-
-
-
-        
-        
-        
-            
-        
-        // let pointa=(prompt('Введите первое число:'));
-        // let pointb=(prompt('Введите второе число:'));
         let inputCity = document.querySelector('.input_city'); 
         let inputA = document.querySelector('.input_inA'); 
         let inputB = document.querySelector('.input_inB');
@@ -187,10 +124,6 @@ ymaps.ready(init);
         let inRashod = document.querySelector('.input_rashod')
         let select1 = document.getElementById('cities');
 
-        // console.log(select1);
-        // console.log(inRashod);
-
-    
         
         let pointA
         let pointB
@@ -198,7 +131,6 @@ ymaps.ready(init);
         let bb
         let rashod
 
-        // var ttt = [56.3081666, 44.0238771]
         
         var myMap = new ymaps.Map("map", {
             center: [56.3081666, 44.0238771],
@@ -207,12 +139,6 @@ ymaps.ready(init);
             searchControlProvider: 'yandex#search'
         });
         
-
-        
-        
-        
-        
-
         button.onclick = function (){
             delete moveList; 
             let apiKey = "bd550011bdc3b1e12ec74f06ca1b0d68";
@@ -220,17 +146,13 @@ ymaps.ready(init);
             let city = inputCity.value;
             // Формируем url для GET запроса
             let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${apiKey}`;
-            // myMap.destroy();
 
             myMap.geoObjects.removeAll()
 
             axios.get(url).then(res => {
                 // Выводим результат в консоль браузера
-                // console.log(res.data);
+                console.log(res.data);
                 })
-        
-        
-                
                 // Отправка GET запроса
                 axios.get(url).then(res => {
                 // Вывод города
@@ -239,10 +161,6 @@ ymaps.ready(init);
                 document.querySelector('.temp').innerHTML = res.data.main.temp
                 // console.log(document.querySelector('.temp').innerHTML)
                 const temp= document.querySelector('.temp').innerHTML
-
-
-               
-
                 // console.log(snow);
                 // Вывод влажности
                 document.querySelector('.humidity').innerHTML = res.data.main.humidity
@@ -250,14 +168,8 @@ ymaps.ready(init);
                 document.querySelector('.wind').innerHTML = res.data.snow;
                 // return temp
                 var snow = document.querySelector('.wind').innerHTML
-                
-
-
-                
                 const re = snow.split(" ", 2);
-                // console.log(res.data.snow);
-                // console.log(snow);
-                // console.log(re);
+
 
 
 
@@ -281,27 +193,13 @@ ymaps.ready(init);
                 weather=weather*1.23;
             }
 
-
-            // console.log(weather);
-    
-
-            
-            // location.reload();
             pointA = inputCity.value +" "+ inputA.value;
             pointB = inputCity.value +" "+ inputB.value;
             point1 = select1.value;
 
-            
-
             rashod = inRashod.value;
             
             rashod = rashod*n;
-            // console.log(n) 
-            // console.log(rashod);
-            
-            
-
-            // console.log(temp);
             
             inputA.value = inputA.value;
             inputB.value = inputB.value;
@@ -313,97 +211,25 @@ ymaps.ready(init);
             var tt1=pointB;
             
 
-            
-            
-            //определяем координаты по адресу: Москва, Тимирязевская ул. 49
             ymaps.geocode(tt,{results:1}).then(
             function(res){  var MyGeoObj = res.geoObjects.get(0);
 
             //извлечение координат
             var ttt = MyGeoObj.geometry.getCoordinates();
-            // document.getElementById('two').value = MyGeoObj.geometry.getCoordinates()[1];
             //добавляем метку на карте
-            // one = ttt[1]
             ymaps.geocode(tt1,{results:1}).then(
-                function(res){  var MyGeoObj = res.geoObjects.get(0);
-    
+                function(res){  
+                  var MyGeoObj = res.geoObjects.get(0)
                 //извлечение координат
                 var ttt1 = MyGeoObj.geometry.getCoordinates();
-            
-            // arr = ttt[0],ttt[1];
-            // return ttt;
-
-            // console.log(ttt);
-            
-            // ttt.toString();
-
-
-
-
-            
-            // console.log(ttt);
-
-            // arr='[56.3081666, 44.0238771]';
-            // console.log(typeof arr);
             var new_center = [(ttt[0]+ttt1[0])/2, (ttt[1]+ttt1[1])/2]
             // console.log(new_center);
 
-
-            
             myMap.setCenter(new_center);
-            
         }
         );
     }
     );
-            // var myMap = new ymaps.Map("map", {
-            //     center: ttt,
-            //     zoom: 11
-            // }, {
-            //     searchControlProvider: 'yandex#search'
-            // });
-
-            
-            
-            
-        
-
-        
-//         var UI=document.getElementById('Введите бензин').value;
-        
-//     var pointa;
-//     $.ajax({
-//         url: "pointA.txt",
-//         dataType: "text",
-//         async: true,
-//         success: function(msg){
-//             pointa = msg;
-//             // alert('Содержимое файла: '+pointa);
-//         }
-//     });
-//     var pointa = reader.readAsText("pointA.txt");
-
-//     var request = new XMLHttpRequest;
-
-//     request.open('GET', 'pointA.txt', true);
-
-//     request.onload = function () {
-//         console.log(request.responseText);
-//     };
-
-//     request.send(null);
-//     jQuery.get('https://files.000webhost.com/public_html/pointA.text', function(data) {
-//     alert(data);
-// });
-
-
-    
-//     fetch('https://files.000webhost.com/public_html/pointA.text')
-//         .then(response => response.text())
-//         .then((data) => {
-//         console.log(data)
-//   })
-    
 
     ymaps.route([
         pointA,
@@ -439,8 +265,7 @@ ymaps.ready(init);
 
             }
         }
-        // console.log(point1);
-            // return(oil);
+
             var oil=52.5;
                 switch (point1){
                     case 'b100':
@@ -457,10 +282,6 @@ ymaps.ready(init);
                         break;
                         
                 }
-                // console.log(oil)
-        // let n =11;
-        // ;
-        
 
         if((length<=2)&&(length>0)){
             rashod=rashod*1.2;
@@ -482,33 +303,9 @@ ymaps.ready(init);
         if((length>100)){
             rashod=rashod*0.78;
         }
-        //  console.log(rashod);
-    
 
         var len = Math.round(length/1000*oil*rashod/100*weather);
-            // console.log(len)
-            
-        // delete rashod;
-        // n= 0;
-        // delete n;
 
-
-
-        // $('#list').innerHTML = ''; 
-        //     moveList = ` 
-        //     ${Math.round(length) / 1000} км 
-        //     Стоимость поездки ${len}₽` ; 
-        //     $('#list').append(moveList);
-
-        //     const list = document.querySelector('#list'); 
-        //         list.innerText = ''; 
-        //         moveList = ` 
-        //         ${Math.round(length) / 1000} км 
-        //         Стоимость поездки ${len}₽ 
-        //         ` ; 
-        //         list.innerText(moveList);
-
-      
                 const list = document.querySelector('#list'); 
                     list.innerHTML = ''; 
                     moveList = ` 
@@ -517,18 +314,10 @@ ymaps.ready(init);
                     list.append(moveList);
                     
                     list.append("Температура в городе "+ city +" "+temp +"С°");
-        // moveList += oil*(lenght)/1000*n/100;
-        // $('#list').append(moveList);
-        // alter("Стоимость поездки" +price);
         alter(data);
-        
-        // alter(pointa);
-
     })
     }, function (error) {
         alert('Возникла ошибка: ' + error.message);
     });
-// console.log(len);
 }
-
 }
